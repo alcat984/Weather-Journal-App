@@ -2,7 +2,7 @@
 
 // Create a new date instance dynamically with JS
 const baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-const countryCode = ',it&';
+const countryCode = ',ita&';
 const unitOfMeasurement = 'units=metric';
 const API_KEY = `&appid=79d40003135e0c3584fe885d1ec08b98`;
 
