@@ -48,14 +48,26 @@ const { Router } = require('express');
 
 // Initialize all route with a callback function
 
-app.post('/addWeather', sendData);
+// app.post('/addWeather', sendData);
+
+// function sendData (request, response) {
+//   response.send(request.body);
+// };
+
+app.get('/all', sendData);
 
 function sendData (request, response) {
-  response.send(request.body);
+  response.send(projectData);
 };
-
-
 
 // Callback function to complete GET '/all'
 
+// POST an addWeather
+const data = [];
+
+app.post('/addWeather', addWeather);
+
+function addWeather (req,res){
+    data.push(req.body);
+};
 // Post Route

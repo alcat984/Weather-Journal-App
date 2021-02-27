@@ -1,10 +1,12 @@
 /* Global Variables for OpenWeather API request*/
 
+const openweather_key = require("../keys");
+
 // Create a new date instance dynamically with JS
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 const countryCode = ',it&';
 const unitOfMeasurement = 'units=metric';
-const API_KEY = `&appid=79d40003135e0c3584fe885d1ec08b98`;
+const API_KEY = openweather_key.API_KEY;
 
 const currentWeather = document.getElementById('zip');
 
