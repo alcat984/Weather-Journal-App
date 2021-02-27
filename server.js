@@ -24,6 +24,7 @@
   /* Cors for cross origin allowance */
 
   const cors = require('cors');
+const { Router } = require('express');
   app.use(cors());
   
   /* Initialize the main project folder */
@@ -43,3 +44,18 @@
       console.log(`Server running on localhost: ${port}`);
     };
      
+// Callback to debug
+
+// Initialize all route with a callback function
+
+app.post('/addWeather', sendData);
+
+function sendData (request, response) {
+  response.send(request.body);
+};
+
+
+
+// Callback function to complete GET '/all'
+
+// Post Route

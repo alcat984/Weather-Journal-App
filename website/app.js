@@ -4,7 +4,7 @@
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 const countryCode = ',it&';
 const unitOfMeasurement = 'units=metric';
-const API_KEY = `&appid=79d40003135e0c3584...`;
+const API_KEY = `&appid=79d40003135e0c3584fe885d1ec08b98`;
 
 const currentWeather = document.getElementById('zip');
 
@@ -16,6 +16,7 @@ function performAction(e) {
 
     if(zip) {
         url = baseURL + currentWeather.value + countryCode + unitOfMeasurement + API_KEY;
+        console.log(url);
         }else{
             console.log({ message: 'Bad url call!'})
         }
@@ -32,7 +33,7 @@ const getWeatherData = async (url) => {
     const response = await fetch(url)
     try {
               const data = await response.json();
-              console.log(data)
+              console.log("data", data);
               //Add data to post request
               postData ('/addWeather', {name: data['name'], icon: data['weather'][0]['icon'], temp_min: data['main']['temp_min'].toFixed(), 
                             description: data['weather'][0]['description']
@@ -45,6 +46,7 @@ const getWeatherData = async (url) => {
 
 const postData = async (url="", data = {}) => {
     console.log(data);
+    console.log("url", url);
     const response = await fetch(url, {
          method: 'POST',
          credentials: 'same-origin',
